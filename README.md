@@ -78,7 +78,7 @@
 
 
     PPT Link: 
-    https://puneetvashisht.github.io/slides/reactjs.html
+    [a link](https://puneetvashisht.github.io/slides/reactjs.html)
 
 
     Tea Break: 3:50 - 4:10 pm
