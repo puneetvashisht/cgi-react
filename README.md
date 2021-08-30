@@ -1,12 +1,12 @@
 # cgi-react webinar
 
- [a link](https://puneetvashisht.github.io/slides/reactjs.html)
+
 
     How to Practice:
 
     1. Online Platforms: CodePen, CodeSandbox, or Stackblitz. Link : https://codesandbox.io/s/new
     2. Virtual Lab (pre-installed NodeJS, Visual Studio Code)
-    URL:- https://vs.iiht.tech
+[Virtual Lab Link](https://vs.iiht.tech)
     Lab Access Guide
 
 
@@ -79,8 +79,7 @@
     ·	The entire session will be hands-on. All modules mentioned here will help the participants to build App. 
 
 
-    PPT Link: 
-    [a link](https://puneetvashisht.github.io/slides/reactjs.html)
+[PPT Link](https://puneetvashisht.github.io/slides/reactjs.html)
 
 
     Tea Break: 3:50 - 4:10 pm
