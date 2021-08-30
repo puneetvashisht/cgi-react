@@ -1,5 +1,7 @@
 # cgi-react webinar
 
+ [a link](https://puneetvashisht.github.io/slides/reactjs.html)
+
     How to Practice:
 
     1. Online Platforms: CodePen, CodeSandbox, or Stackblitz. Link : https://codesandbox.io/s/new
