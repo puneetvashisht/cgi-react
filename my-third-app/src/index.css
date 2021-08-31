@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.cardwidth {
+  width: 18rem;
+  /* border : 1px solid red; */
+}
