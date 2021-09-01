@@ -1,0 +1,19 @@
+{
+    "courses": [
+        {
+            "title": "React",
+            "summary": "Library from facebook!",
+            "votes": 34345
+        },
+        {
+            "title": "Angular",
+            "summary": "Framework from google!",
+            "votes": 34445
+        },
+        {
+            "title": "Ember",
+            "summary": "Framework open-source!",
+            "votes": 12445
+        }
+    ]
+}

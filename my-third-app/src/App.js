@@ -1,28 +1,52 @@
 
 import Card from './components/Card';
+import AddCourse from './components/AddCourse';
+import Register from './components/Register';
 import Button from 'react-bootstrap/Button';
-import Toast from 'react-bootstrap/Toast';
+
 
 import React, { Component } from 'react'
 // import Dropdown from './components/Dropdown';
 
 export default class App extends Component {
 
+  // object creation.. state initializations
   constructor() {
+    console.log('**** Constructor Invoked')
     super();
     this.state = {
-      courses: [
-        { title: "React", summary: "Library from facebook!", votes: 34345 },
-        { title: "Angular", summary: "Framework from google!", votes: 34445 },
-        { title: "Ember", summary: "Framework open-source!", votes: 12445 }
-      ],
+      courses: [],
       show: true
 
     }
   }
-  render() {
 
-    let courseList = this.state.courses.map((course, i) => {
+  componentDidMount() {
+    console.log('**** Component Did Mount')
+
+    // Async invocation..
+    // Http communication
+    // setTimeout(()=>{
+    //   this.setState({courses: []});
+    // }, 5000);
+
+    // Get operations using a file name
+    // fetch('http://localhost:3000/dummy-courses.json')
+
+    fetch('http://localhost:8080/courses')
+    .then(res=>res.json())
+    .then(body=>{
+      console.log(body);
+      this.setState({courses: body})
+    });
+    
+  }
+
+
+  render() {
+    console.log('**** Render Method')
+   
+    let courseList = this.state.courses && this.state.courses.map((course, i) => {
       return (
             <Card key={i} course={course}></Card>
       )
@@ -30,17 +54,15 @@ export default class App extends Component {
 
     return (
       <div className="container">
+         <div className="row">
+            <Register/>
+          </div>
           <div className="row">
-          <Toast onClose={()=> this.setState({show: false})} show={this.state.show}>
-  <Toast.Header>
-    <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-    <strong className="me-auto">Bootstrap</strong>
-    <small>11 mins ago</small>
-  </Toast.Header>
-  <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
-</Toast>
+            <AddCourse></AddCourse>
+
           <Button size="sm" onClick={()=> this.setState({show: !this.state.show})} variant="dark">Show Toast</Button>
           </div>
+          <hr/>
           <div className="row">
         {courseList}
         {/* <Dropdown></Dropdown> */}

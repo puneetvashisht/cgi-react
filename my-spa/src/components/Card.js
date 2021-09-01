@@ -2,6 +2,7 @@
 import './Card.css'
 import React, { Component } from 'react'
 import Badge from './Badge'
+import { Link } from 'react-router-dom';
 
 const myStyle = {
     width: '18rem'
@@ -30,7 +31,7 @@ class Card extends Component {
                 
                 <img src="https://via.placeholder.com/150" className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">{this.props.course.title}</h5>
+                    <h5 className="card-title"><Link to={'/updatecourse/' + this.props.course.id}>{this.props.course.title}</Link></h5>
                     <p className="card-text">{this.props.course.summary}</p>
                     <Badge caption="Votes" count={this.props.course.votes}></Badge>
                     <button className="btn btn-danger" onClick={this.deleteCourse.bind(this)}> X </button>
