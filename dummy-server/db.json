@@ -1,12 +1,6 @@
 {
   "courses": [
     {
-      "id": 1,
-      "title": "React",
-      "summary": "Library from facebook!",
-      "votes": 34345
-    },
-    {
       "id": 3,
       "title": "Ember",
       "summary": "Framework open-source!",
@@ -46,11 +40,6 @@
       "title": "Test11",
       "summary": "tes 111",
       "id": 10
-    },
-    {
-      "title": "dd",
-      "summary": "dkslkdsg ",
-      "id": 11
     },
     {
       "title": "d",

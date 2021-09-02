@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from './Card';
+import axios from 'axios';
 
 export default class ViewCourses extends Component {
 
@@ -16,12 +17,24 @@ export default class ViewCourses extends Component {
       componentDidMount() {
         console.log('**** Component Did Mount')
     
-        fetch('http://localhost:8080/courses')
-        .then(res=>res.json())
-        .then(body=>{
-          console.log(body);
-          this.setState({courses: body})
-        });
+        // fetch('http://localhost:8080/courses')
+        // .then(res=>res.json())
+        // .then(body=>{
+        //   console.log(body);
+        //   this.setState({courses: body})
+        // });
+
+        axios.get('http://localhost:8080/courses')
+        .then((response) => {
+            // handle success
+            console.log(response);
+            this.setState({courses: response.data})
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+
         
       }
 
