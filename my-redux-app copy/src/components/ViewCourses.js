@@ -38,7 +38,7 @@ class ViewCourses extends Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    courses: state.courseReducer.courses
+    courses: state.courses
   }
 }
 

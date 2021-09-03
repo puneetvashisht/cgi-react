@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import Card from './Card';
 // import axios from 'axios';
 import {connect} from 'react-redux';
-import * as actions from '../actions/action';
+import ListGroup from 'react-bootstrap/ListGroup';
+import * as actions from '../actions/workout-actions';
 
-class ViewCourses extends Component {
+class ViewWorkotus extends Component {
 
     constructor() {
         console.log('**** Constructor Invoked')
@@ -14,21 +15,23 @@ class ViewCourses extends Component {
 
       componentDidMount() {
         console.log('**** Component Did Mount');
-        this.props.onFetchCourses();
+        this.props.onFetchWorkouts();
       }
 
 
     render() {
 
-        let courseList = this.props.courses && this.props.courses.map((course, i) => {
+        let workoutList = this.props.workouts && this.props.workouts.map((workout, i) => {
             return (
-                  <Card key={i} course={course}></Card>
+              <ListGroup.Item>{workout.title}</ListGroup.Item>
             )
           })
         return (
             <div className="container">
                 <div className="row">
-                {courseList}
+                <ListGroup>
+                  {workoutList}
+                </ListGroup>
                 </div>      
             </div>
         )
@@ -38,15 +41,15 @@ class ViewCourses extends Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    courses: state.courseReducer.courses
+    workouts: state.workoutReducer.workouts
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     // onAddCourse: (course) => dispatch(  {type: 'ADD_COURSE', payload: course})
-    onFetchCourses: () => dispatch(actions.fetchCourses())
+    onFetchWorkouts: () => dispatch(actions.fetchWorkouts())
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ViewCourses);
+export default connect(mapStateToProps, mapDispatchToProps)(ViewWorkotus);

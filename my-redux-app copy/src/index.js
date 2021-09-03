@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {applyMiddleware, combineReducers, createStore} from 'redux'
-import courseReducer from './store/course-reducer';
-import workoutReducer from './store/workout-reducer'
+import {applyMiddleware, createStore} from 'redux'
+import reducer from './store/reducer';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension'
 
 // middleware
 const loggerMiddleware = store => next => action => {
@@ -19,16 +17,8 @@ const loggerMiddleware = store => next => action => {
 }
 
 
-const composedEnhancer = composeWithDevTools(
-  // EXAMPLE: Add whatever middleware you actually want to use here
-  applyMiddleware(loggerMiddleware, thunkMiddleware)
-  // other store enhancers if any
-)
-
 //1. Store - One single store to contains all application state
-// const store = createStore(reducer, composedEnhancer);
-
-const store = createStore(combineReducers({courseReducer, workoutReducer}) , composedEnhancer)
+const store = createStore(reducer, applyMiddleware(loggerMiddleware, thunkMiddleware));
 
 ReactDOM.render(
   <React.StrictMode>

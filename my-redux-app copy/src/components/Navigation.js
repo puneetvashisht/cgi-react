@@ -16,7 +16,6 @@ const Navigation = (props) => {
                 {props.auth && <li><Link to="/about">About</Link></li>}
                 {props.auth && <li><Link to="/addcourse">Add Course</Link></li>}
                 {props.auth && <li><Link to="/viewcourse">View Courses</Link></li>}
-                {props.auth && <li><Link to="/viewworkout">View Workouts</Link></li>}
                 {!props.auth && <li><Link to="/login">Login</Link></li>}
                 {!props.auth && <li><Link to="/register">Register</Link></li>}
                 {props.auth && <li><a href="#" onClick={()=>props.authenticate()}>Logout</a></li>}
@@ -28,7 +27,7 @@ const Navigation = (props) => {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-      auth: state.courseReducer.auth
+      auth: state.auth
     }
   }
 
