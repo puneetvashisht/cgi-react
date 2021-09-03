@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Card from './Card';
-// import axios from 'axios';
 import {connect} from 'react-redux';
 import ListGroup from 'react-bootstrap/ListGroup';
 import * as actions from '../actions/workout-actions';

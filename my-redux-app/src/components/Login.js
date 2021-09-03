@@ -1,4 +1,4 @@
-import * as actions from '../actions/action';
+import * as actions from '../actions/auth-actions';
 import {connect} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 

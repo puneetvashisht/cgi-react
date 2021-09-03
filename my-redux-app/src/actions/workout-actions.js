@@ -48,9 +48,8 @@ export const addWorkout = (workout) => {
             body: JSON.stringify(workout)
         })
             .then(res => res.json())
-            .then(workouts => {
-                console.log(workouts);
-                dispatch(saveWorkout(workouts));
+            .then(data => {
+                dispatch(saveWorkout(workout));
             })
     }
 }

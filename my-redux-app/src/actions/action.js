@@ -4,7 +4,7 @@
 export const ADD_COURSE = 'ADD_COURSE';
 export const DELETE_COURSE = 'DELETE_COURSE';
 export const FETCH_COURSES = 'FETCH_COURSES';
-export const USER_LOGIN = 'USER_LOGIN';
+
 
 const baseUrl = "http://localhost:8080/courses/"
 
@@ -26,20 +26,7 @@ export const deleteCourse = (id) => {
 
 }
 
-export const login = () => {
-    console.log('Login action invoked');
 
-    // simulation of authentication
-    return {type: USER_LOGIN, payload: true}
-}
-
-
-export const logout = () => {
-    console.log('Logout action invoked');
-
-    // simulation of authentication
-    return {type: USER_LOGIN, payload: false}
-}
 
 const saveCourse = (course) => {
     return { type: ADD_COURSE, payload: course }

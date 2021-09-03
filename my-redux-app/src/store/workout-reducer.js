@@ -14,18 +14,12 @@ const reducer = (state = initialState, action) =>{
             return {
                 workouts: action.payload
             }
-        case actions.ADD_WORKOUT:
-            if(action.payload.success){
-                return {
-                    message: 'Workout successfully added!'
-                }
-            }
-            else{
-                return {
-                    message: 'Workout failed to added!'
-                }
-            }
-                
+        case actions.ADD_WORKOUT: 
+            // mutable change to state
+            // state.courses.push(action.payload);
+            let newWorkout = [...state.workouts, action.payload]
+            return {workouts: newWorkout}
+        
         default : return state
     }
  

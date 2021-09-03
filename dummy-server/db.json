@@ -49,6 +49,11 @@
       "title": "SPAAApp",
       "summary": "dgjkvlsdjkgg d",
       "id": 14
+    },
+    {
+      "title": "TestCourse",
+      "summary": "TestDescription",
+      "id": 15
     }
   ],
   "workouts": [
@@ -63,6 +68,15 @@
       "title": "Swin for 20 minutest",
       "description": "Cardio workout",
       "cbpm": 12
+    },
+    {
+      "title": "Boxing",
+      "description": "super cardio",
+      "cbpm": "25",
+      "id": 3
     }
-  ]
+  ],
+  "auth": {
+    "success": true
+  }
 }

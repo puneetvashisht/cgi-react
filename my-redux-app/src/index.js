@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {applyMiddleware, combineReducers, createStore} from 'redux'
 import courseReducer from './store/course-reducer';
 import workoutReducer from './store/workout-reducer'
+import authReducer from './store/auth-reducer'
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'
@@ -28,7 +29,7 @@ const composedEnhancer = composeWithDevTools(
 //1. Store - One single store to contains all application state
 // const store = createStore(reducer, composedEnhancer);
 
-const store = createStore(combineReducers({courseReducer, workoutReducer}) , composedEnhancer)
+const store = createStore(combineReducers({courseReducer, workoutReducer, authReducer}) , composedEnhancer)
 
 ReactDOM.render(
   <React.StrictMode>

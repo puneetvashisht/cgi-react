@@ -15,6 +15,7 @@ import Login from "./components/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import {About} from "./components/About";
 import ViewWorkouts from "./components/ViewWorkouts";
+import AddWorkout from "./components/AddWorkout";
 
 export default function App() {
   return (
@@ -36,6 +37,9 @@ export default function App() {
               </Route>
               <Route path="/addcourse">
                 <AddCourse />
+              </Route>
+              <Route path="/addworkout">
+                <AddWorkout />
               </Route>
               <Route path="/viewcourse" component={ViewCourses}>
               </Route>

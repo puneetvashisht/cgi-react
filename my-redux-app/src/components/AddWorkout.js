@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Toast from 'react-bootstrap/Toast';
 import {connect} from 'react-redux';
-import * as actions from '../actions/action';
+import * as actions from '../actions/workout-actions';
 
 class AddCourse extends Component {
 
@@ -11,16 +11,17 @@ class AddCourse extends Component {
             show: false,
             title: '',
             description: '',
-            titleError: ''
+            titleError: '',
+            cbpm: 0
           }
         // this.title = React.createRef();
         // this.description = React.createRef();
 
       }
 
-      addCourse(){
+      addWorkout(){
          // add to single store
-         this.props.onAddCourse({title: this.state.title, summary: this.state.description});
+         this.props.onAddWorkout({title: this.state.title, description: this.state.description, cbpm: this.state.cbpm});
 
       }
 
@@ -33,6 +34,9 @@ class AddCourse extends Component {
       }
       handleDescChange(event){
           this.setState({description: event.target.value})
+      }
+      handleCbpmChange(event){
+          this.setState({cbpm: event.target.value})
       }
 
     render() {
@@ -57,7 +61,11 @@ class AddCourse extends Component {
                     <input type="text" onChange={this.handleDescChange.bind(this)} value={this.state.description} className="form-control" placeholder="Enter Description" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
                 <div className="input-group mb-3">
-                    <button className="btn btn-primary" onClick={this.addCourse.bind(this)}>Add Course</button>
+                    <span className="input-group-text" id="basic-addon1">Calories Burnt Per Minute</span>
+                    <input type="number" onChange={this.handleCbpmChange.bind(this)} value={this.state.cbpm} className="form-control" placeholder="Enter Description" aria-label="Username" aria-describedby="basic-addon1" />
+                </div>
+                <div className="input-group mb-3">
+                    <button className="btn btn-primary" onClick={this.addWorkout.bind(this)}>Add Wokrout</button>
                 </div>
             </div>
         )
@@ -73,7 +81,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     // onAddCourse: (course) => dispatch(  {type: 'ADD_COURSE', payload: course})
-    onAddCourse: (course) => dispatch(actions.addCourse(course))
+    onAddWorkout: (workout) => dispatch(actions.addWorkout(workout))
   }
 }
 

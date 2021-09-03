@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import classes from './Navigation.module.css';
 
-import * as actions from '../actions/action';
-
+import * as actions from '../actions/auth-actions';
 
 
 const Navigation = (props) => {
@@ -15,6 +14,7 @@ const Navigation = (props) => {
                 <li><Link to="/">Home</Link></li>
                 {props.auth && <li><Link to="/about">About</Link></li>}
                 {props.auth && <li><Link to="/addcourse">Add Course</Link></li>}
+                {props.auth && <li><Link to="/addworkout">Add Workout</Link></li>}
                 {props.auth && <li><Link to="/viewcourse">View Courses</Link></li>}
                 {props.auth && <li><Link to="/viewworkout">View Workouts</Link></li>}
                 {!props.auth && <li><Link to="/login">Login</Link></li>}
@@ -28,7 +28,7 @@ const Navigation = (props) => {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-      auth: state.courseReducer.auth
+      auth: state.authReducer.auth
     }
   }
 
